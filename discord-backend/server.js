@@ -1,0 +1,20 @@
+const express = require("express");
+const cors = require("cors");
+const http = require("http");
+const mongoose = require("mongoose");
+require("dotenv").config();
+
+const PORT = process.env.PORT || process.env.API_PORT;
+
+const app = express();
+app.use(express.json());
+app.use(cors());
+
+const server = http.createServer(app);
+
+server.listen(PORT, (err) => {
+  if (err) {
+    console.log(err);
+  }
+  console.log(`Server is listening on ${PORT}`);
+});
