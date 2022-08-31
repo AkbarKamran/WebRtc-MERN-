@@ -4,5 +4,9 @@ const registerSchema = joi.object({
   password: joi.string().min(8).max(12).required(),
   mail: joi.string().email().required(),
 });
+const loginSchema = joi.object({
+  password: joi.string().min(8).max(12).required(),
+  mail: joi.string().email().required(),
+});
 
-module.exports = registerSchema;
+module.exports = { registerSchema, loginSchema };
